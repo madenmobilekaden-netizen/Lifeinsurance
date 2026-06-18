@@ -153,6 +153,102 @@
       margin-top: 0;
     }
 
+    /* ─── INDEPENDENT AGENT SECTION ─── */
+    #independent {
+      border-top: 1px solid var(--gold-border);
+      border-bottom: 1px solid var(--gold-border);
+      background: linear-gradient(180deg, rgba(201,168,76,0.04) 0%, transparent 100%);
+    }
+
+    .carrier-grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 52px;
+      background: var(--white-5);
+      border: 1px solid var(--gold-border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .carrier-stat {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 20px;
+      gap: 8px;
+    }
+
+    .carrier-number {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .carrier-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      text-align: center;
+    }
+
+    .carrier-divider {
+      width: 1px;
+      height: 60px;
+      background: var(--gold-border);
+      flex-shrink: 0;
+    }
+
+    .advantage-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .advantage-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .advantage-icon {
+      color: var(--gold);
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .advantage-item strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 6px;
+    }
+
+    .advantage-item p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 480px) {
+      .carrier-grid {
+        flex-direction: column;
+      }
+      .carrier-divider {
+        width: 60px;
+        height: 1px;
+      }
+    }
+
     /* ─── SECTION 2-4: INSURANCE TYPE SECTIONS ─── */
     .insurance-section {
       border-top: 1px solid var(--gold-border);
@@ -491,6 +587,60 @@
       <p class="agent-tag fade-in fade-in-delay-4">Kaden Harris &nbsp;·&nbsp; Licensed Insurance Agent</p>
       <!-- GOOGLE_CALENDAR_LINK_HERE -->
       <a href="GOOGLE_CALENDAR_LINK_HERE" class="cta-btn fade-in fade-in-delay-4" target="_blank" rel="noopener noreferrer" style="margin-top:36px;">Set Your Protection Up Now</a>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION · INDEPENDENT AGENT ADVANTAGE
+  ═══════════════════════════════════════ -->
+  <section id="independent">
+    <div class="container">
+      <p class="eyebrow fade-in" style="text-align:center;">Why It Matters Who You Work With</p>
+      <h2 class="fade-in fade-in-delay-1" style="text-align:center;">You Have One Agent.<br/>You Have 15 Companies Working For You.</h2>
+      <div class="gold-divider center fade-in fade-in-delay-2"></div>
+      <p class="fade-in fade-in-delay-2" style="text-align:center;max-width:600px;margin:0 auto 48px;">Most agents are captive — they can only sell one company's products, so they fit you to whatever they have. As an independent agent, I work with 15 of the largest life insurance carriers in the country. That means I shop the market on your behalf and find the policy that actually fits your life — not theirs.</p>
+
+      <div class="carrier-grid fade-in fade-in-delay-3">
+        <div class="carrier-stat">
+          <span class="carrier-number">15</span>
+          <span class="carrier-label">Top-Rated Carriers</span>
+        </div>
+        <div class="carrier-divider"></div>
+        <div class="carrier-stat">
+          <span class="carrier-number">1</span>
+          <span class="carrier-label">Agent In Your Corner</span>
+        </div>
+        <div class="carrier-divider"></div>
+        <div class="carrier-stat">
+          <span class="carrier-number">Best</span>
+          <span class="carrier-label">Rate For Your Situation</span>
+        </div>
+      </div>
+
+      <div class="advantage-list fade-in">
+        <div class="advantage-item">
+          <span class="advantage-icon">✦</span>
+          <div>
+            <strong>I shop — you save.</strong>
+            <p>Every carrier prices risk differently. A health condition, your age, your lifestyle — one company might charge you double what another would for identical coverage. I know which carriers favor which profiles, and I use that to get you the best rate.</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <span class="advantage-icon">✦</span>
+          <div>
+            <strong>No pressure, no quota.</strong>
+            <p>I'm not incentivized to push one product over another. My only goal is finding the right fit for you — whether that's a $20/month term policy or a comprehensive IUL strategy.</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <span class="advantage-icon">✦</span>
+          <div>
+            <strong>One conversation covers everything.</strong>
+            <p>Instead of calling five different companies and repeating your information five times, you tell me once. I handle the comparison, the application, and the placement — start to finish.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
