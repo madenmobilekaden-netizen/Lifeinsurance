@@ -571,6 +571,156 @@
         padding: 18px 24px;
       }
     }
+
+    /* ─── INSURANCE SLIDER ─── */
+    #insurance-slider {
+      border-top: 1px solid var(--gold-border);
+    }
+
+    .slider-tabs {
+      display: flex;
+      gap: 0;
+      border: 1px solid var(--gold-border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+
+    .slider-tab {
+      flex: 1;
+      background: transparent;
+      border: none;
+      border-right: 1px solid var(--gold-border);
+      padding: 16px 12px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      transition: background 0.2s ease;
+    }
+
+    .slider-tab:last-child {
+      border-right: none;
+    }
+
+    .slider-tab:hover {
+      background: var(--white-5);
+    }
+
+    .slider-tab.active {
+      background: var(--gold-dim);
+    }
+
+    .tab-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .tab-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+    }
+
+    .slider-tab.active .tab-label {
+      color: var(--cream);
+    }
+
+    .slider-viewport {
+      overflow: hidden;
+      border: 1px solid var(--gold-border);
+      border-radius: 12px;
+      background: var(--white-5);
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+
+    .slide {
+      min-width: 100%;
+      padding: 48px 40px;
+      box-sizing: border-box;
+    }
+
+    .slide .eyebrow {
+      margin-bottom: 14px;
+    }
+
+    .slide h2 {
+      margin-bottom: 24px;
+    }
+
+    .slider-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .slider-arrow {
+      background: transparent;
+      border: 1px solid var(--gold-border);
+      color: var(--gold);
+      font-size: 1.1rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+      line-height: 1;
+    }
+
+    .slider-arrow:hover {
+      background: var(--gold-dim);
+      border-color: var(--gold);
+      transform: scale(1.08);
+    }
+
+    .slider-arrow:disabled {
+      opacity: 0.3;
+      cursor: default;
+      transform: none;
+    }
+
+    .slider-dots {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold-border);
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .dot.active {
+      background: var(--gold);
+      transform: scale(1.3);
+    }
+
+    @media (max-width: 600px) {
+      .slide {
+        padding: 32px 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -646,138 +796,160 @@
 
 
   <!-- ═══════════════════════════════════════
-       SECTION 2 · TERM LIFE INSURANCE
+       SECTION 2–4 · INSURANCE SLIDER
   ═══════════════════════════════════════ -->
-  <section id="term" class="insurance-section">
+  <section id="insurance-slider" class="fade-in">
     <div class="container">
-      <p class="eyebrow fade-in">Option 01 · Most Popular</p>
-      <h2 class="fade-in fade-in-delay-1">Term Life Insurance</h2>
+      <p class="eyebrow" style="text-align:center;">Your Three Options</p>
+      <h2 style="text-align:center;margin-bottom:40px;">Understanding Your Coverage</h2>
 
-      <p class="body-text fade-in fade-in-delay-2">
-        Term life insurance is the most straightforward type of coverage. You pay a fixed monthly premium for a set period of time — typically 10, 20, or 30 years — and if you pass away during that term, your beneficiaries receive the full death benefit, tax-free. If the term ends and you're still alive, the coverage simply expires. That's it.
-      </p>
-      <p class="body-text fade-in fade-in-delay-3">
-        Because it's temporary and has no cash value component, term life is by far the most affordable way to get a large amount of coverage. A healthy 30-year-old can often secure a $500,000, 20-year policy for less than the cost of a streaming subscription each month.
-      </p>
-      <p class="body-text fade-in fade-in-delay-3">
-        <strong style="color: var(--cream);">Who it's best for:</strong> Young, healthy individuals — especially parents with children at home, homeowners with a mortgage, or anyone with dependents who rely on their income. If your goal is maximum protection at the lowest possible cost while your family needs it most, term life is purpose-built for exactly that.
-      </p>
-
-      <div class="pros-cons fade-in">
-        <div class="pros-cons-box pros">
-          <h3>Pros</h3>
-          <ul>
-            <li><span class="icon">✦</span> Lowest monthly premium of any option</li>
-            <li><span class="icon">✦</span> Simple — easy to understand and compare</li>
-            <li><span class="icon">✦</span> Large death benefit for the cost</li>
-            <li><span class="icon">✦</span> Ideal for covering temporary needs (mortgage, kids, income replacement)</li>
-            <li><span class="icon">✦</span> Convertible to permanent coverage with many carriers</li>
-          </ul>
-        </div>
-        <div class="pros-cons-box cons">
-          <h3>Cons</h3>
-          <ul>
-            <li><span class="icon">✕</span> Coverage expires — no payout if you outlive the term</li>
-            <li><span class="icon">✕</span> No cash value or savings component</li>
-            <li><span class="icon">✕</span> Premiums increase significantly if you renew at an older age</li>
-            <li><span class="icon">✕</span> Doesn't address permanent or lifelong needs</li>
-          </ul>
-        </div>
+      <!-- Tab nav -->
+      <div class="slider-tabs" role="tablist">
+        <button class="slider-tab active" role="tab" aria-selected="true"  data-index="0">
+          <span class="tab-number">01</span>
+          <span class="tab-label">Term Life</span>
+        </button>
+        <button class="slider-tab" role="tab" aria-selected="false" data-index="1">
+          <span class="tab-number">02</span>
+          <span class="tab-label">Whole Life</span>
+        </button>
+        <button class="slider-tab" role="tab" aria-selected="false" data-index="2">
+          <span class="tab-number">03</span>
+          <span class="tab-label">IUL</span>
+        </button>
       </div>
 
-      <p class="section-closer fade-in">"If you want the most coverage for the lowest monthly payment, term life is almost always the answer."</p>
-    </div>
-  </section>
+      <!-- Slides wrapper -->
+      <div class="slider-viewport" aria-live="polite">
+        <div class="slider-track" id="sliderTrack">
 
+          <!-- SLIDE 1: TERM -->
+          <div class="slide" role="tabpanel">
+            <p class="eyebrow">Option 01 · Most Popular</p>
+            <h2>Term Life Insurance</h2>
+            <p class="body-text">
+              Term life insurance is the most straightforward type of coverage. You pay a fixed monthly premium for a set period of time — typically 10, 20, or 30 years — and if you pass away during that term, your beneficiaries receive the full death benefit, tax-free. If the term ends and you're still alive, the coverage simply expires. That's it.
+            </p>
+            <p class="body-text">
+              Because it's temporary and has no cash value component, term life is by far the most affordable way to get a large amount of coverage. A healthy 30-year-old can often secure a $500,000, 20-year policy for less than the cost of a streaming subscription each month.
+            </p>
+            <p class="body-text">
+              <strong style="color: var(--cream);">Who it's best for:</strong> Young, healthy individuals — especially parents with children at home, homeowners with a mortgage, or anyone with dependents who rely on their income. If your goal is maximum protection at the lowest possible cost while your family needs it most, term life is purpose-built for exactly that.
+            </p>
+            <div class="pros-cons">
+              <div class="pros-cons-box pros">
+                <h3>Pros</h3>
+                <ul>
+                  <li><span class="icon">✦</span> Lowest monthly premium of any option</li>
+                  <li><span class="icon">✦</span> Simple — easy to understand and compare</li>
+                  <li><span class="icon">✦</span> Large death benefit for the cost</li>
+                  <li><span class="icon">✦</span> Ideal for covering temporary needs (mortgage, kids, income replacement)</li>
+                  <li><span class="icon">✦</span> Convertible to permanent coverage with many carriers</li>
+                </ul>
+              </div>
+              <div class="pros-cons-box cons">
+                <h3>Cons</h3>
+                <ul>
+                  <li><span class="icon">✕</span> Coverage expires — no payout if you outlive the term</li>
+                  <li><span class="icon">✕</span> No cash value or savings component</li>
+                  <li><span class="icon">✕</span> Premiums increase significantly if you renew at an older age</li>
+                  <li><span class="icon">✕</span> Doesn't address permanent or lifelong needs</li>
+                </ul>
+              </div>
+            </div>
+            <p class="section-closer">"If you want the most coverage for the lowest monthly payment, term life is almost always the answer."</p>
+          </div>
 
-  <!-- ═══════════════════════════════════════
-       SECTION 3 · WHOLE LIFE INSURANCE
-  ═══════════════════════════════════════ -->
-  <section id="whole" class="insurance-section">
-    <div class="container">
-      <p class="eyebrow fade-in">Option 02 · Lifetime Coverage</p>
-      <h2 class="fade-in fade-in-delay-1">Whole Life Insurance</h2>
+          <!-- SLIDE 2: WHOLE LIFE -->
+          <div class="slide" role="tabpanel">
+            <p class="eyebrow">Option 02 · Lifetime Coverage</p>
+            <h2>Whole Life Insurance</h2>
+            <p class="body-text">
+              Whole life insurance is permanent coverage that never expires — as long as premiums are paid, your beneficiaries are guaranteed a payout no matter when you pass away. Unlike term, whole life has two components working simultaneously: the death benefit and a cash value account that grows over time at a guaranteed rate set by the insurance company.
+            </p>
+            <p class="body-text">
+              Your premiums are fixed for life from the day you lock in your policy — they will never increase regardless of age or health changes. The cash value grows tax-deferred and can be borrowed against or used as a financial resource during your lifetime.
+            </p>
+            <p class="body-text">
+              <strong style="color: var(--cream);">Who it's best for:</strong> Individuals who want lifelong peace of mind and a guaranteed savings component. It's particularly valuable for business owners protecting key partnerships, people with lifelong dependents, or anyone who wants to leave a guaranteed inheritance and prefers predictability over market-linked growth.
+            </p>
+            <div class="pros-cons">
+              <div class="pros-cons-box pros">
+                <h3>Pros</h3>
+                <ul>
+                  <li><span class="icon">✦</span> Coverage never expires — guaranteed payout</li>
+                  <li><span class="icon">✦</span> Builds guaranteed cash value over time</li>
+                  <li><span class="icon">✦</span> Fixed premiums for life — no surprises</li>
+                  <li><span class="icon">✦</span> Cash value can be borrowed against tax-free</li>
+                  <li><span class="icon">✦</span> Predictable, stable, and conservative</li>
+                </ul>
+              </div>
+              <div class="pros-cons-box cons">
+                <h3>Cons</h3>
+                <ul>
+                  <li><span class="icon">✕</span> Significantly higher premiums than term</li>
+                  <li><span class="icon">✕</span> Cash value growth is slow — especially early on</li>
+                  <li><span class="icon">✕</span> Less flexibility than other permanent options</li>
+                  <li><span class="icon">✕</span> Lower death benefit per dollar compared to term</li>
+                </ul>
+              </div>
+            </div>
+            <p class="section-closer">"If you want coverage that lasts your entire life and builds guaranteed cash value, whole life is worth the higher premium."</p>
+          </div>
 
-      <p class="body-text fade-in fade-in-delay-2">
-        Whole life insurance is permanent coverage that never expires — as long as premiums are paid, your beneficiaries are guaranteed a payout no matter when you pass away. Unlike term, whole life has two components working simultaneously: the death benefit and a cash value account that grows over time at a guaranteed rate set by the insurance company.
-      </p>
-      <p class="body-text fade-in fade-in-delay-3">
-        Your premiums are fixed for life from the day you lock in your policy — they will never increase regardless of age or health changes. The cash value grows tax-deferred and can be borrowed against or used as a financial resource during your lifetime.
-      </p>
-      <p class="body-text fade-in fade-in-delay-3">
-        <strong style="color: var(--cream);">Who it's best for:</strong> Individuals who want lifelong peace of mind and a guaranteed savings component. It's particularly valuable for business owners protecting key partnerships, people with lifelong dependents, or anyone who wants to leave a guaranteed inheritance and prefers predictability over market-linked growth.
-      </p>
+          <!-- SLIDE 3: IUL -->
+          <div class="slide" role="tabpanel">
+            <p class="eyebrow">Option 03 · Growth Potential</p>
+            <h2>Indexed Universal Life (IUL)</h2>
+            <p class="body-text">
+              An Indexed Universal Life policy combines permanent life insurance with a cash value account tied to the performance of a market index — most commonly the S&amp;P 500. Here's the key distinction: you're not directly invested in the market. Instead, your cash value growth is <em style="color: var(--cream);">linked</em> to the index's performance, which means you benefit when the market goes up — and you're protected when it goes down. Most IUL policies include a 0% floor, so a bad market year doesn't shrink your cash value.
+            </p>
+            <p class="body-text">
+              IULs also offer flexibility that whole life doesn't — you can adjust your premiums and death benefit over time as your needs change. This makes it a versatile tool that can adapt to different life stages.
+            </p>
+            <p class="body-text">
+              <strong style="color: var(--cream);">Who it's best for:</strong> People who want permanent life insurance coverage <em style="color: var(--cream);">and</em> a tax-advantaged vehicle for building wealth over the long term. An IUL can serve as a supplement to a 401(k) or IRA — the cash value grows tax-deferred, loans are taken out tax-free, and there's no contribution limits like a retirement account. It's especially powerful for high earners looking to diversify beyond traditional retirement vehicles.
+            </p>
+            <div class="pros-cons">
+              <div class="pros-cons-box pros">
+                <h3>Pros</h3>
+                <ul>
+                  <li><span class="icon">✦</span> Market-linked growth potential with downside protection</li>
+                  <li><span class="icon">✦</span> 0% floor — you can't lose cash value in a market downturn</li>
+                  <li><span class="icon">✦</span> Tax-deferred growth and tax-free access via loans</li>
+                  <li><span class="icon">✦</span> Flexible premiums and adjustable death benefit</li>
+                  <li><span class="icon">✦</span> Permanent coverage — never expires</li>
+                  <li><span class="icon">✦</span> No contribution limits like a 401(k)</li>
+                </ul>
+              </div>
+              <div class="pros-cons-box cons">
+                <h3>Cons</h3>
+                <ul>
+                  <li><span class="icon">✕</span> More complex — requires proper structuring to perform well</li>
+                  <li><span class="icon">✕</span> Growth is capped — upside is limited by policy cap rates</li>
+                  <li><span class="icon">✕</span> Higher premiums than term life</li>
+                  <li><span class="icon">✕</span> Internal fees can reduce returns if not managed correctly</li>
+                  <li><span class="icon">✕</span> Takes years to build meaningful cash value</li>
+                </ul>
+              </div>
+            </div>
+            <p class="section-closer">"If you want lifetime coverage plus the ability to build serious cash value over time, an IUL could be one of the smartest financial moves you make."</p>
+          </div>
 
-      <div class="pros-cons fade-in">
-        <div class="pros-cons-box pros">
-          <h3>Pros</h3>
-          <ul>
-            <li><span class="icon">✦</span> Coverage never expires — guaranteed payout</li>
-            <li><span class="icon">✦</span> Builds guaranteed cash value over time</li>
-            <li><span class="icon">✦</span> Fixed premiums for life — no surprises</li>
-            <li><span class="icon">✦</span> Cash value can be borrowed against tax-free</li>
-            <li><span class="icon">✦</span> Predictable, stable, and conservative</li>
-          </ul>
+        </div><!-- /slider-track -->
+      </div><!-- /slider-viewport -->
+
+      <!-- Arrow controls -->
+      <div class="slider-controls">
+        <button class="slider-arrow" id="prevBtn" aria-label="Previous option">&#8592;</button>
+        <div class="slider-dots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
         </div>
-        <div class="pros-cons-box cons">
-          <h3>Cons</h3>
-          <ul>
-            <li><span class="icon">✕</span> Significantly higher premiums than term</li>
-            <li><span class="icon">✕</span> Cash value growth is slow — especially early on</li>
-            <li><span class="icon">✕</span> Less flexibility than other permanent options</li>
-            <li><span class="icon">✕</span> Lower death benefit per dollar compared to term</li>
-          </ul>
-        </div>
+        <button class="slider-arrow" id="nextBtn" aria-label="Next option">&#8594;</button>
       </div>
 
-      <p class="section-closer fade-in">"If you want coverage that lasts your entire life and builds guaranteed cash value, whole life is worth the higher premium."</p>
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════
-       SECTION 4 · INDEXED UNIVERSAL LIFE
-  ═══════════════════════════════════════ -->
-  <section id="iul" class="insurance-section">
-    <div class="container">
-      <p class="eyebrow fade-in">Option 03 · Growth Potential</p>
-      <h2 class="fade-in fade-in-delay-1">Indexed Universal Life (IUL)</h2>
-
-      <p class="body-text fade-in fade-in-delay-2">
-        An Indexed Universal Life policy combines permanent life insurance with a cash value account tied to the performance of a market index — most commonly the S&amp;P 500. Here's the key distinction: you're not directly invested in the market. Instead, your cash value growth is <em style="color: var(--cream);">linked</em> to the index's performance, which means you benefit when the market goes up — and you're protected when it goes down. Most IUL policies include a 0% floor, so a bad market year doesn't shrink your cash value.
-      </p>
-      <p class="body-text fade-in fade-in-delay-3">
-        IULs also offer flexibility that whole life doesn't — you can adjust your premiums and death benefit over time as your needs change. This makes it a versatile tool that can adapt to different life stages.
-      </p>
-      <p class="body-text fade-in fade-in-delay-3">
-        <strong style="color: var(--cream);">Who it's best for:</strong> People who want permanent life insurance coverage <em style="color: var(--cream);">and</em> a tax-advantaged vehicle for building wealth over the long term. An IUL can serve as a supplement to a 401(k) or IRA — the cash value grows tax-deferred, loans are taken out tax-free, and there's no contribution limits like a retirement account. It's especially powerful for high earners looking to diversify beyond traditional retirement vehicles.
-      </p>
-
-      <div class="pros-cons fade-in">
-        <div class="pros-cons-box pros">
-          <h3>Pros</h3>
-          <ul>
-            <li><span class="icon">✦</span> Market-linked growth potential with downside protection</li>
-            <li><span class="icon">✦</span> 0% floor — you can't lose cash value in a market downturn</li>
-            <li><span class="icon">✦</span> Tax-deferred growth and tax-free access via loans</li>
-            <li><span class="icon">✦</span> Flexible premiums and adjustable death benefit</li>
-            <li><span class="icon">✦</span> Permanent coverage — never expires</li>
-            <li><span class="icon">✦</span> No contribution limits like a 401(k)</li>
-          </ul>
-        </div>
-        <div class="pros-cons-box cons">
-          <h3>Cons</h3>
-          <ul>
-            <li><span class="icon">✕</span> More complex — requires proper structuring to perform well</li>
-            <li><span class="icon">✕</span> Growth is capped — upside is limited by policy cap rates</li>
-            <li><span class="icon">✕</span> Higher premiums than term life</li>
-            <li><span class="icon">✕</span> Internal fees can reduce returns if not managed correctly</li>
-            <li><span class="icon">✕</span> Takes years to build meaningful cash value</li>
-          </ul>
-        </div>
-      </div>
-
-      <p class="section-closer fade-in">"If you want lifetime coverage plus the ability to build serious cash value over time, an IUL could be one of the smartest financial moves you make."</p>
     </div>
   </section>
 
@@ -906,6 +1078,8 @@
 
   <script>
     (function () {
+
+      /* ── Scroll fade-in ── */
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
@@ -913,22 +1087,79 @@
             observer.unobserve(entry.target);
           }
         });
-      }, {
-        threshold: 0.12,
-        rootMargin: '0px 0px -40px 0px'
-      });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-      // Trigger hero elements immediately since they're above the fold
-      var heroFades = document.querySelectorAll('#hero .fade-in');
-      heroFades.forEach(function (el) {
+      document.querySelectorAll('#hero .fade-in').forEach(function (el) {
         el.classList.add('visible');
       });
 
-      // Observe everything else
-      var allFades = document.querySelectorAll('section:not(#hero) .fade-in, footer .fade-in');
-      allFades.forEach(function (el) {
+      document.querySelectorAll('section:not(#hero) .fade-in, footer .fade-in').forEach(function (el) {
         observer.observe(el);
       });
+
+      /* ── Insurance slider ── */
+      var track    = document.getElementById('sliderTrack');
+      var slides   = track.querySelectorAll('.slide');
+      var tabs     = document.querySelectorAll('.slider-tab');
+      var dots     = document.querySelectorAll('.dot');
+      var prevBtn  = document.getElementById('prevBtn');
+      var nextBtn  = document.getElementById('nextBtn');
+      var current  = 0;
+      var total    = slides.length;
+
+      function goTo(index) {
+        current = index;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+
+        tabs.forEach(function (t, i) {
+          t.classList.toggle('active', i === current);
+          t.setAttribute('aria-selected', i === current ? 'true' : 'false');
+        });
+
+        dots.forEach(function (d, i) {
+          d.classList.toggle('active', i === current);
+        });
+
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current === total - 1;
+      }
+
+      prevBtn.addEventListener('click', function () {
+        if (current > 0) goTo(current - 1);
+      });
+
+      nextBtn.addEventListener('click', function () {
+        if (current < total - 1) goTo(current + 1);
+      });
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          goTo(parseInt(tab.dataset.index, 10));
+        });
+      });
+
+      dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          goTo(parseInt(dot.dataset.index, 10));
+        });
+      });
+
+      /* Touch/swipe support for mobile */
+      var touchStartX = 0;
+      track.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+      }, { passive: true });
+
+      track.addEventListener('touchend', function (e) {
+        var diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) {
+          if (diff > 0 && current < total - 1) goTo(current + 1);
+          if (diff < 0 && current > 0) goTo(current - 1);
+        }
+      }, { passive: true });
+
+      goTo(0);
+
     })();
   </script>
 
