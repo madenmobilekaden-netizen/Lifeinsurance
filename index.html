@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Understanding Your Life Insurance Options · Kaden Harris</title>
+  <meta name="description" content="Learn the difference between Term, Whole Life, and IUL before your free consultation with Kaden Harris, licensed insurance agent in Missouri." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy-deep: #050A14;
+      --navy-mid: #0D1B2A;
+      --navy-light: #112236;
+      --navy-card: #0A1628;
+      --cream: #F5F0E8;
+      --cream-muted: #B8B0A2;
+      --gold: #C9A84C;
+      --gold-light: #E2C06E;
+      --gold-dim: rgba(201, 168, 76, 0.15);
+      --gold-border: rgba(201, 168, 76, 0.3);
+      --white-5: rgba(255, 255, 255, 0.05);
+      --white-8: rgba(255, 255, 255, 0.08);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
+      background-attachment: fixed;
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── SCROLL FADE IN ─── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-in-delay-1 { transition-delay: 0.1s; }
+    .fade-in-delay-2 { transition-delay: 0.2s; }
+    .fade-in-delay-3 { transition-delay: 0.3s; }
+    .fade-in-delay-4 { transition-delay: 0.4s; }
+
+    /* ─── LAYOUT ─── */
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 88px 0;
+    }
+
+    /* ─── EYEBROW ─── */
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    /* ─── HEADINGS ─── */
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 22px;
+    }
+
+    p {
+      color: var(--cream-muted);
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ─── GOLD DIVIDER ─── */
+    .gold-divider {
+      width: 64px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 28px 0;
+    }
+    .gold-divider.center {
+      margin: 28px auto;
+    }
+
+    /* ─── SECTION 1: HERO ─── */
+    #hero {
+      padding: 110px 0 88px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    #hero .subheadline {
+      font-size: clamp(1rem, 2.2vw, 1.15rem);
+      color: var(--cream-muted);
+      max-width: 620px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    #hero .agent-tag {
+      font-size: 0.78rem;
+      color: rgba(184, 176, 162, 0.6);
+      letter-spacing: 0.08em;
+      margin-top: 0;
+    }
+
+    /* ─── SECTION 2-4: INSURANCE TYPE SECTIONS ─── */
+    .insurance-section {
+      border-top: 1px solid var(--gold-border);
+    }
+
+    .insurance-section .body-text {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--cream-muted);
+      margin-bottom: 20px;
+    }
+
+    /* ─── PROS/CONS ─── */
+    .pros-cons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 32px 0;
+    }
+
+    .pros-cons-box {
+      background: var(--white-5);
+      border: 1px solid var(--white-8);
+      border-radius: 10px;
+      padding: 24px 20px;
+    }
+
+    .pros-cons-box h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .pros-cons-box.pros h3 {
+      color: var(--gold);
+    }
+
+    .pros-cons-box.cons h3 {
+      color: var(--cream-muted);
+    }
+
+    .pros-cons-box ul {
+      list-style: none;
+    }
+
+    .pros-cons-box ul li {
+      font-size: 0.9rem;
+      color: var(--cream-muted);
+      padding: 5px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+
+    .pros-cons-box ul li .icon {
+      flex-shrink: 0;
+      margin-top: 2px;
+      font-style: normal;
+    }
+
+    .pros-cons-box.pros ul li .icon {
+      color: var(--gold);
+    }
+
+    .pros-cons-box.cons ul li .icon {
+      color: rgba(184, 176, 162, 0.45);
+    }
+
+    .section-closer {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--cream);
+      border-left: 2px solid var(--gold);
+      padding-left: 20px;
+      margin-top: 28px;
+      line-height: 1.65;
+    }
+
+    /* ─── SECTION 5: COMPARISON TABLE ─── */
+    #comparison {
+      border-top: 1px solid var(--gold-border);
+    }
+
+    #comparison h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    /* Desktop table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--gold-border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .comparison-table thead tr {
+      background: var(--gold-dim);
+    }
+
+    .comparison-table thead th {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 18px 20px;
+      text-align: center;
+      border-bottom: 1px solid var(--gold-border);
+    }
+
+    .comparison-table thead th:first-child {
+      text-align: left;
+      color: var(--cream-muted);
+    }
+
+    .comparison-table tbody tr {
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .comparison-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .comparison-table tbody tr:nth-child(odd) {
+      background: var(--white-5);
+    }
+
+    .comparison-table tbody tr:nth-child(even) {
+      background: transparent;
+    }
+
+    .comparison-table tbody td {
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      color: var(--cream-muted);
+      text-align: center;
+      border-right: 1px solid rgba(201, 168, 76, 0.1);
+    }
+
+    .comparison-table tbody td:last-child {
+      border-right: none;
+    }
+
+    .comparison-table tbody td:first-child {
+      text-align: left;
+      font-weight: 500;
+      color: var(--cream);
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Mobile cards */
+    .comparison-cards {
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .comp-card {
+      background: var(--navy-card);
+      border: 1px solid var(--gold-border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .comp-card-header {
+      background: var(--gold-dim);
+      padding: 16px 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid var(--gold-border);
+    }
+
+    .comp-card-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.88rem;
+    }
+
+    .comp-card-row:last-child {
+      border-bottom: none;
+    }
+
+    .comp-card-label {
+      color: var(--cream);
+      font-weight: 500;
+      flex-shrink: 0;
+      min-width: 120px;
+    }
+
+    .comp-card-value {
+      color: var(--cream-muted);
+      text-align: right;
+    }
+
+    /* ─── SECTION 6: CTA ─── */
+    #cta {
+      border-top: 1px solid var(--gold-border);
+      text-align: center;
+    }
+
+    #cta h2 {
+      margin-bottom: 18px;
+    }
+
+    #cta .cta-subtext {
+      font-size: 1rem;
+      color: var(--cream-muted);
+      max-width: 500px;
+      margin: 0 auto 38px;
+      line-height: 1.75;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      padding: 18px 42px;
+      border-radius: 4px;
+      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 24px rgba(201, 168, 76, 0.25);
+    }
+
+    .cta-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(201, 168, 76, 0.35);
+    }
+
+    .cta-btn:active {
+      transform: translateY(0);
+    }
+
+    .cta-fine {
+      margin-top: 20px;
+      font-size: 0.76rem;
+      color: rgba(184, 176, 162, 0.5);
+      letter-spacing: 0.06em;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: rgba(0, 0, 0, 0.35);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    footer .footer-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      color: var(--cream-muted);
+      margin-bottom: 12px;
+    }
+
+    footer .footer-disclaimer {
+      font-size: 0.72rem;
+      color: rgba(184, 176, 162, 0.4);
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      section {
+        padding: 64px 0;
+      }
+
+      #hero {
+        padding: 80px 0 64px;
+      }
+
+      .pros-cons {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-table {
+        display: none;
+      }
+
+      .comparison-cards {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .cta-btn {
+        width: 100%;
+        text-align: center;
+        padding: 18px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       SECTION 1 · HERO
+  ═══════════════════════════════════════ -->
+  <section id="hero">
+    <div class="container">
+      <p class="eyebrow fade-in">Your Free Consultation · Next Step</p>
+      <h1 class="fade-in fade-in-delay-1">You're One Step Closer To<br />Protecting Your Family.</h1>
+      <p class="subheadline fade-in fade-in-delay-2">Before we talk, here's what you need to know about your options. Understanding these three types of life insurance will help us find the right fit for you in minutes.</p>
+      <div class="gold-divider center fade-in fade-in-delay-3"></div>
+      <p class="agent-tag fade-in fade-in-delay-4">Kaden Harris &nbsp;·&nbsp; Licensed Insurance Agent &nbsp;·&nbsp; Missouri</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 2 · TERM LIFE INSURANCE
+  ═══════════════════════════════════════ -->
+  <section id="term" class="insurance-section">
+    <div class="container">
+      <p class="eyebrow fade-in">Option 01 · Most Popular</p>
+      <h2 class="fade-in fade-in-delay-1">Term Life Insurance</h2>
+
+      <p class="body-text fade-in fade-in-delay-2">
+        Term life insurance is the most straightforward type of coverage. You pay a fixed monthly premium for a set period of time — typically 10, 20, or 30 years — and if you pass away during that term, your beneficiaries receive the full death benefit, tax-free. If the term ends and you're still alive, the coverage simply expires. That's it.
+      </p>
+      <p class="body-text fade-in fade-in-delay-3">
+        Because it's temporary and has no cash value component, term life is by far the most affordable way to get a large amount of coverage. A healthy 30-year-old can often secure a $500,000, 20-year policy for less than the cost of a streaming subscription each month.
+      </p>
+      <p class="body-text fade-in fade-in-delay-3">
+        <strong style="color: var(--cream);">Who it's best for:</strong> Young, healthy individuals — especially parents with children at home, homeowners with a mortgage, or anyone with dependents who rely on their income. If your goal is maximum protection at the lowest possible cost while your family needs it most, term life is purpose-built for exactly that.
+      </p>
+
+      <div class="pros-cons fade-in">
+        <div class="pros-cons-box pros">
+          <h3>Pros</h3>
+          <ul>
+            <li><span class="icon">✦</span> Lowest monthly premium of any option</li>
+            <li><span class="icon">✦</span> Simple — easy to understand and compare</li>
+            <li><span class="icon">✦</span> Large death benefit for the cost</li>
+            <li><span class="icon">✦</span> Ideal for covering temporary needs (mortgage, kids, income replacement)</li>
+            <li><span class="icon">✦</span> Convertible to permanent coverage with many carriers</li>
+          </ul>
+        </div>
+        <div class="pros-cons-box cons">
+          <h3>Cons</h3>
+          <ul>
+            <li><span class="icon">✕</span> Coverage expires — no payout if you outlive the term</li>
+            <li><span class="icon">✕</span> No cash value or savings component</li>
+            <li><span class="icon">✕</span> Premiums increase significantly if you renew at an older age</li>
+            <li><span class="icon">✕</span> Doesn't address permanent or lifelong needs</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="section-closer fade-in">"If you want the most coverage for the lowest monthly payment, term life is almost always the answer."</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 3 · WHOLE LIFE INSURANCE
+  ═══════════════════════════════════════ -->
+  <section id="whole" class="insurance-section">
+    <div class="container">
+      <p class="eyebrow fade-in">Option 02 · Lifetime Coverage</p>
+      <h2 class="fade-in fade-in-delay-1">Whole Life Insurance</h2>
+
+      <p class="body-text fade-in fade-in-delay-2">
+        Whole life insurance is permanent coverage that never expires — as long as premiums are paid, your beneficiaries are guaranteed a payout no matter when you pass away. Unlike term, whole life has two components working simultaneously: the death benefit and a cash value account that grows over time at a guaranteed rate set by the insurance company.
+      </p>
+      <p class="body-text fade-in fade-in-delay-3">
+        Your premiums are fixed for life from the day you lock in your policy — they will never increase regardless of age or health changes. The cash value grows tax-deferred and can be borrowed against or used as a financial resource during your lifetime.
+      </p>
+      <p class="body-text fade-in fade-in-delay-3">
+        <strong style="color: var(--cream);">Who it's best for:</strong> Individuals who want lifelong peace of mind and a guaranteed savings component. It's particularly valuable for business owners protecting key partnerships, people with lifelong dependents, or anyone who wants to leave a guaranteed inheritance and prefers predictability over market-linked growth.
+      </p>
+
+      <div class="pros-cons fade-in">
+        <div class="pros-cons-box pros">
+          <h3>Pros</h3>
+          <ul>
+            <li><span class="icon">✦</span> Coverage never expires — guaranteed payout</li>
+            <li><span class="icon">✦</span> Builds guaranteed cash value over time</li>
+            <li><span class="icon">✦</span> Fixed premiums for life — no surprises</li>
+            <li><span class="icon">✦</span> Cash value can be borrowed against tax-free</li>
+            <li><span class="icon">✦</span> Predictable, stable, and conservative</li>
+          </ul>
+        </div>
+        <div class="pros-cons-box cons">
+          <h3>Cons</h3>
+          <ul>
+            <li><span class="icon">✕</span> Significantly higher premiums than term</li>
+            <li><span class="icon">✕</span> Cash value growth is slow — especially early on</li>
+            <li><span class="icon">✕</span> Less flexibility than other permanent options</li>
+            <li><span class="icon">✕</span> Lower death benefit per dollar compared to term</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="section-closer fade-in">"If you want coverage that lasts your entire life and builds guaranteed cash value, whole life is worth the higher premium."</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 4 · INDEXED UNIVERSAL LIFE
+  ═══════════════════════════════════════ -->
+  <section id="iul" class="insurance-section">
+    <div class="container">
+      <p class="eyebrow fade-in">Option 03 · Growth Potential</p>
+      <h2 class="fade-in fade-in-delay-1">Indexed Universal Life (IUL)</h2>
+
+      <p class="body-text fade-in fade-in-delay-2">
+        An Indexed Universal Life policy combines permanent life insurance with a cash value account tied to the performance of a market index — most commonly the S&amp;P 500. Here's the key distinction: you're not directly invested in the market. Instead, your cash value growth is <em style="color: var(--cream);">linked</em> to the index's performance, which means you benefit when the market goes up — and you're protected when it goes down. Most IUL policies include a 0% floor, so a bad market year doesn't shrink your cash value.
+      </p>
+      <p class="body-text fade-in fade-in-delay-3">
+        IULs also offer flexibility that whole life doesn't — you can adjust your premiums and death benefit over time as your needs change. This makes it a versatile tool that can adapt to different life stages.
+      </p>
+      <p class="body-text fade-in fade-in-delay-3">
+        <strong style="color: var(--cream);">Who it's best for:</strong> People who want permanent life insurance coverage <em style="color: var(--cream);">and</em> a tax-advantaged vehicle for building wealth over the long term. An IUL can serve as a supplement to a 401(k) or IRA — the cash value grows tax-deferred, loans are taken out tax-free, and there's no contribution limits like a retirement account. It's especially powerful for high earners looking to diversify beyond traditional retirement vehicles.
+      </p>
+
+      <div class="pros-cons fade-in">
+        <div class="pros-cons-box pros">
+          <h3>Pros</h3>
+          <ul>
+            <li><span class="icon">✦</span> Market-linked growth potential with downside protection</li>
+            <li><span class="icon">✦</span> 0% floor — you can't lose cash value in a market downturn</li>
+            <li><span class="icon">✦</span> Tax-deferred growth and tax-free access via loans</li>
+            <li><span class="icon">✦</span> Flexible premiums and adjustable death benefit</li>
+            <li><span class="icon">✦</span> Permanent coverage — never expires</li>
+            <li><span class="icon">✦</span> No contribution limits like a 401(k)</li>
+          </ul>
+        </div>
+        <div class="pros-cons-box cons">
+          <h3>Cons</h3>
+          <ul>
+            <li><span class="icon">✕</span> More complex — requires proper structuring to perform well</li>
+            <li><span class="icon">✕</span> Growth is capped — upside is limited by policy cap rates</li>
+            <li><span class="icon">✕</span> Higher premiums than term life</li>
+            <li><span class="icon">✕</span> Internal fees can reduce returns if not managed correctly</li>
+            <li><span class="icon">✕</span> Takes years to build meaningful cash value</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="section-closer fade-in">"If you want lifetime coverage plus the ability to build serious cash value over time, an IUL could be one of the smartest financial moves you make."</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 5 · COMPARISON TABLE
+  ═══════════════════════════════════════ -->
+  <section id="comparison">
+    <div class="container">
+      <p class="eyebrow fade-in" style="text-align:center;">Side-by-Side Breakdown</p>
+      <h2 class="fade-in fade-in-delay-1">How They Compare</h2>
+
+      <!-- Desktop Table -->
+      <div class="fade-in fade-in-delay-2">
+        <table class="comparison-table" aria-label="Life insurance comparison table">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Term Life</th>
+              <th scope="col">Whole Life</th>
+              <th scope="col">IUL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monthly Cost</td>
+              <td>$ Lowest</td>
+              <td>$$$ Higher</td>
+              <td>$$ Moderate–High</td>
+            </tr>
+            <tr>
+              <td>Coverage Length</td>
+              <td>10, 20, or 30 years</td>
+              <td>Lifetime</td>
+              <td>Lifetime</td>
+            </tr>
+            <tr>
+              <td>Builds Cash Value</td>
+              <td>No</td>
+              <td>Yes — guaranteed rate</td>
+              <td>Yes — index-linked</td>
+            </tr>
+            <tr>
+              <td>Growth Potential</td>
+              <td>None</td>
+              <td>Low, guaranteed</td>
+              <td>Moderate–High (with floor)</td>
+            </tr>
+            <tr>
+              <td>Premium Flexibility</td>
+              <td>Fixed</td>
+              <td>Fixed</td>
+              <td>Flexible</td>
+            </tr>
+            <tr>
+              <td>Best For</td>
+              <td>Max coverage, lowest cost, young families</td>
+              <td>Lifelong coverage, guaranteed savings</td>
+              <td>Permanent coverage + wealth building</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Mobile Cards -->
+      <div class="comparison-cards fade-in">
+
+        <div class="comp-card">
+          <div class="comp-card-header">Term Life</div>
+          <div class="comp-card-row"><span class="comp-card-label">Monthly Cost</span><span class="comp-card-value">$ Lowest</span></div>
+          <div class="comp-card-row"><span class="comp-card-label">Coverage Length</span><span class="comp-card-value">10, 20, or 30 years</span></div>
+          <div class="comp-card-row"><span class="comp-card-label">Builds Cash Value</span><span class="comp-card-value">No</span></div>
+          <div class="comp-card-row"><span class="comp-card-label">Growth Potential</span><span class="comp-card-value">None</span></div>
+          <div class="comp-card-row"><span class="comp-card-label">Premium Flexibility</span><span class="comp-card-value">Fixed</span></div>
+          <div class="comp-card-row"><span class="comp-card-label">Best For</span><span class="comp-card-value">Max coverage at the lowest cost — young families &amp; mortgage holders</span></div>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-card-header">Whole Life</div>
+          <div class="comp-card-row"><span class="comp-card-label">Monthly Cost</span><span class="comp-card-value">$$$ Higher</span></div>
+          <div class="comp-card-row"><span class="comp-card-label">Coverage Length</span><span class="comp-card-value">Lifetime</span></div>
+          <div class="comp-card-row"><span class="comp-card-label">Builds Cash Value</span><span class="comp-card-value">Yes — guaranteed rate</span></div>
+          <div class="comp-card-row"><span class="comp-card-label">Growth Potential</span><span class="comp-card-value">Low, guaranteed</span></div>
+          <div class="comp-card-row"><span class="comp-card-label">Premium Flexibility</span><span class="comp-card-value">Fixed</span></div>
+          <div class="comp-card-row"><span class="comp-card-label">Best For</span><span class="comp-card-value">Lifelong coverage with guaranteed, predictable savings</span></div>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-card-header">Indexed Universal Life (IUL)</div>
+          <div class="comp-card-row"><span class="comp-card-label">Monthly Cost</span><span class="comp-card-value">$$ Moderate–High</span></div>
+          <div class="comp-card-row"><span class="comp-card-label">Coverage Length</span><span class="comp-card-value">Lifetime</span></div>
+          <div class="comp-card-row"><span class="comp-card-label">Builds Cash Value</span><span class="comp-card-value">Yes — index-linked</span></div>
+          <div class="comp-card-row"><span class="comp-card-label">Growth Potential</span><span class="comp-card-value">Moderate–High (with 0% floor)</span></div>
+          <div class="comp-card-row"><span class="comp-card-label">Premium Flexibility</span><span class="comp-card-value">Flexible</span></div>
+          <div class="comp-card-row"><span class="comp-card-label">Best For</span><span class="comp-card-value">Permanent coverage + tax-advantaged wealth building</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 6 · CTA
+  ═══════════════════════════════════════ -->
+  <section id="cta">
+    <div class="container">
+      <p class="eyebrow fade-in" style="text-align:center;">Your Next Step</p>
+      <h2 class="fade-in fade-in-delay-1">Ready To Get Covered?</h2>
+      <p class="cta-subtext fade-in fade-in-delay-2">It takes about 10 minutes. No pressure, no jargon — just a straightforward conversation about protecting what matters most.</p>
+      <!-- GOOGLE_CALENDAR_LINK_HERE -->
+      <a href="GOOGLE_CALENDAR_LINK_HERE" class="cta-btn fade-in fade-in-delay-3" target="_blank" rel="noopener noreferrer">Set Your Protection Up Now</a>
+      <p class="cta-fine fade-in fade-in-delay-4">Free consultation &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; Missouri licensed agent</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer>
+    <p class="footer-name">Kaden Harris &nbsp;·&nbsp; Licensed Insurance Agent &nbsp;·&nbsp; Missouri</p>
+    <p class="footer-disclaimer">Life insurance products and availability may vary by state. This page is for informational purposes only and does not constitute financial advice.</p>
+  </footer>
+
+
+  <script>
+    (function () {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      // Trigger hero elements immediately since they're above the fold
+      var heroFades = document.querySelectorAll('#hero .fade-in');
+      heroFades.forEach(function (el) {
+        el.classList.add('visible');
+      });
+
+      // Observe everything else
+      var allFades = document.querySelectorAll('section:not(#hero) .fade-in, footer .fade-in');
+      allFades.forEach(function (el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
+
+</body>
+</html>
